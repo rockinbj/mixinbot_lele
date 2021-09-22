@@ -36,7 +36,7 @@ async function aiChatbotTianxing(question) {
 async function aiChatbotTencent(question) {
     const clientConfig = {
         credential: {
-          secretId: "AKIDVoWy94h37vSihZAUYLr65nEOHsDH4apo ",
+          secretId: "...",
           secretKey: "...",
         },
         region: "ap-guangzhou",
@@ -60,7 +60,7 @@ async function aiChatbotTencent(question) {
 
 async function aiChatbotJd(question) {
     const api = "https://aiapi.jd.com/jdai/chatbot";
-    const appKey = "a28db862a6950f4d42ce77be46fac798";
+    const appKey = "...";
     const secretKey = "...";
     const timeStamp = Date.now();
     const sign = crypto.createHash("md5").update(secretKey+timeStamp).digest("hex");
@@ -94,7 +94,7 @@ async function aiChatbotJd(question) {
 async function aiAudiobotTencent(message) {
     const aiAudioConfig = {
         credential: {
-          secretId: "AKIDVoWy94h37vSihZAUYLr65nEOHsDH4apo",
+          secretId: "...",
           secretKey: "...",
         },
         region: "ap-beijing",
@@ -202,8 +202,8 @@ async function sendAssetBack(transferBody) {
 async function face2Cartoon(imgUrl) {
     const clientConfig = {
         credential: {
-            secretId: "AKIDVoWy94h37vSihZAUYLr65nEOHsDH4apo",
-            secretKey: "jDVYMt98qHQItDG2XliOoxB8oDLCm68t",
+            secretId: "...",
+            secretKey: "...",
         },
         region: "ap-beijing",
         profile: {
