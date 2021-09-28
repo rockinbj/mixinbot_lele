@@ -10,9 +10,9 @@ const TtsClient = tencentcloud.tts.v20190823.Client;  //text2audio
 const NlpClient = tencentcloud.nlp.v20190408.Client;  //chatbot
 const FtClient = tencentcloud.ft.v20200304.Client;  //face2cartoon
 
-const mixinAppConfig = require("./mixinConfig");
+const {mixinConfig, tencentConfig} = require("./mixinConfig");
 const {BlazeClient} = require("mixin-node-sdk");
-const client = new BlazeClient(mixinAppConfig, {parse: true, syncAck: true});
+const client = new BlazeClient(mixinConfig, {parse: true, syncAck: true});
 
 async function aiChatbotTianxing(question) {
     const questionEncoded = encodeURI(question);
@@ -33,8 +33,8 @@ async function aiChatbotTianxing(question) {
 async function aiChatbotTencent(question) {
     const clientConfig = {
         credential: {
-          secretId: "...",
-          secretKey: "...",
+          secretId: tencentConfig.secretId,
+          secretKey: tencentConfig.secretKey,
         },
         region: "ap-guangzhou",
         profile: {
@@ -91,8 +91,8 @@ async function aiChatbotJd(question) {
 async function aiAudiobotTencent(message) {
     const aiAudioConfig = {
         credential: {
-          secretId: "...",
-          secretKey: "...",
+            secretId: tencentConfig.secretId,
+            secretKey: tencentConfig.secretKey,
         },
         region: "ap-beijing",
         profile: {
@@ -199,8 +199,8 @@ async function sendAssetBack(transferBody) {
 async function face2Cartoon(imgUrl) {
     const clientConfig = {
         credential: {
-            secretId: "...",
-            secretKey: "...",
+            secretId: tencentConfig.secretId,
+            secretKey: tencentConfig.secretKey,
         },
         region: "ap-beijing",
         profile: {
