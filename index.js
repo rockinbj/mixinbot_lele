@@ -1,6 +1,3 @@
-const mixinAppConfig = {
-   //...
-   };
 
 const fs = require("fs");
 const axios = require("axios");
@@ -13,9 +10,9 @@ const TtsClient = tencentcloud.tts.v20190823.Client;  //text2audio
 const NlpClient = tencentcloud.nlp.v20190408.Client;  //chatbot
 const FtClient = tencentcloud.ft.v20200304.Client;  //face2cartoon
 
+const mixinAppConfig = require("./mixinConfig");
 const {BlazeClient} = require("mixin-node-sdk");
 const client = new BlazeClient(mixinAppConfig, {parse: true, syncAck: true});
-
 
 async function aiChatbotTianxing(question) {
     const questionEncoded = encodeURI(question);
