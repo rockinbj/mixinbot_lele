@@ -51,7 +51,14 @@ async function aiChatbotTencent(question) {
     };
     
     let r = await chatbotClient.ChatBot(params);
-    return r.Reply;
+    r = r.Reply;
+    let replaceWords = ["宝宝", "主人"];
+    replaceWords.forEach(e => {
+        r = r.replace(e, "乐乐");
+        // console.log(r);
+    });
+    console.log(r);
+    return r;
 }
 
 
